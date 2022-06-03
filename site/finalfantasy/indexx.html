@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&family=Tiro+Devanagari+Sanskrit&display=swap');
+
+    @font-face {
+        font-family: 'finalf';
+        src: url('finalf.ttf')
+            format('ttf')
+         ;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: rgba(0, 0, 0, 0.658);
+    }
+
+    .all {
+        height: 100vh;
+        width: 100%;
+        background-image: url('https://c.wallhere.com/photos/96/09/video_games_Final_Fantasy_XVI_crystal_castle_sky_river_boat_video_game_art-1955077.jpg!d');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .header {
+        background-color: rgba(255, 255, 255, 0.37);
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 45px;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .imglogo {
+        height: 80px;
+    }
+
+    nav ul li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 10px 25px;
+    }
+
+    nav ul li a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: capitalize;
+        font-size: 40px;
+        letter-spacing: 2px;
+    }
+
+    nav ul li a:hover {
+        color: rgb(105, 105, 230);
+        transition: .4s;
+    }
+
+    button {
+        font-family: 'Bebas Neue', cursive;
+        border: 0;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 32px;
+        padding: 10px 15px;
+        color: rgb(0, 0, 0);
+        background-color: #ffffff;
+        width: 120px;
+
+        cursor: pointer;
+    }
+
+    button:hover {
+        transition: .4s;
+        background-color: rgb(105, 105, 230);
+        color: white;
+    }
+
+    .conteudo {
+        position: absolute;
+        top: 50%;
+        left: 8%;
+        transform: translateY(-50%);
+    }
+
+    h1 {
+        color: rgb(0, 0, 0);
+        margin: 20px 0px 20px;
+        font-size: 75px;
+    }
+
+    h3 {
+        color: rgb(0, 0, 0);
+        margin: 20px 0px 25px;
+        margin-bottom: 50px;
+        font-size: 30px;
+    }
+
+    h4 {
+        letter-spacing: 2px;
+        font-size: 20px;
+    }
+
+    .newslatter form {
+        width: 380px;
+        max-width: 100%;
+        position: relative;
+
+    }
+
+    .newslatter form input:first-child {
+        display: inline-block;
+        width: 100%;
+        padding: 14px 130px 14px 15px;
+        border: 2px solid black;
+        outline: none;
+        border-radius: 30px;
+    }
+
+    .newslatter form input:last-child {
+        position: absolute;
+        display: inline-block;
+        outline: none;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 30px;
+        background-color: blue;
+        box-shadow: 0px 0px 0px #000, 0px 0px 15px rgb(63, 63, 185);
+        top: 6px;
+        right: 6px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .historia {
+        width: 100%;
+        padding: 100px 0px;
+        background-color: rgb(105, 105, 230);
+        ;
+        background-image: url('https://www.nme.com/wp-content/uploads/2021/02/Final-Fantasy-XIV-Endwalker.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .historia img {
+        height: auto;
+        width: 430px;
+        border: solid rgba(255, 255, 255, 0.37) 3px;
+    }
+
+    .historiatexto {
+        width: 550px;
+        border: solid white 2px;
+        background-color: rgba(255, 255, 255, 0.37);
+        font-family: 'Bebas Neue', cursive;
+         
+    }
+    ul{
+        font-family: 'Bebas Neue', cursive;
+    }
+
+    .main {
+        width: 1130px;
+        max-width: 95%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+    }
+
+    .historiatexto h2 {
+        color: black;
+        font-size: 55px;
+        font-family: 'Bebas Neue', cursive;
+    }
+
+    .historiatexto h5 {
+        color: black;
+        letter-spacing: 2px;
+        font-size: 22px;
+        margin-bottom: 25px;
+        text-transform: capitalize;
+        font-family: 'Bebas Neue', cursive;
+    }
+
+    .historiatexto p {
+        color: black;
+        letter-spacing: 1px;
+        line-height: 28px;
+        font-size: 18px;
+        margin-bottom: 45px;
+        font-family: 'Bebas Neue', cursive;
+    }
+</style>
+
+<body>
+    <div class="all">
+        <div class="header">
+            <nav>
+                <h2 class="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Final_Fantasy_logo_with_japanese_name.svg/1200px-Final_Fantasy_logo_with_japanese_name.svg.png"
+                        alt="" class="imglogo">
+                </h2>
+                <ul>
+                    <li id=""><a href="#"> Login</a></li>
+                    <li id=""><a href="#"> Cadastro</a></li>
+                </ul>
+                <span>
+                    <button onclick="window.location.href='jogos.html'">Jogos</button>
+                </span>
+
+            </nav>
+        </div>
+      
+        <div class="conteudo">
+            <h4>
+                Bem vindo ao portal
+            </h4>
+
+            <h1> FINAL FANTASY</h1>
+
+            <h3>Guerreiro da Luz</h3>
+
+            <div class="newslatter">
+                <form action="">
+                    <input type="email" name="email" id="mail" placeholder="Digite seu email!">
+                    <input type="submit" name="submit" value="Vamos lá">
+                </form>
+            </div>
+        </div>
+    </div>
+    <section class="historia">
+        <div class="main">
+            <img src="https://preview.redd.it/r9g77jl34sf61.png?auto=webp&s=77f2aae6f32c2ce97072e50658fbed7f93481c15"
+                alt="">
+            <div class="historiatexto">
+                <h2>
+                    Como conheci a serie
+                </h2>
+                <h5>
+                    Da infancia aos dias de hoje
+                </h5>
+                <p>
+                    Sempre gostei muito de videogames desde pequeno,(J)RPGS sendo meus favoritos.
+                    Aos 5 anos de idade recebi um computador velho do meu pai, comecei a usar diariamente, baixando
+                    emuladores e jogando jogos antigos como os de NES, SNES, PS1. Nisso conheci a serie Final Fantasy
+                    começando pelo IV, e rapidamente tornou-se meu jogo favorito na epoca.
+                    Desde então, ja joguei todos que a serie tem a oferecer (I - XV + Spin-Offs) e tenho mais de 10 mil
+                    horas acumuladas.
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+            
+           
+
+    </section>
+  
+</body>
+
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    @font-face {
+        font-family: 'finalf';
+        src: url(finalf.ttf);
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-image: url('https://images4.alphacoders.com/933/933659.jpg');
+        background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+       
+    }
+
+
+  a:link{
+      text-decoration: none;
+      color: black;
+  }
+  a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+    .header {
+        background-color: rgba(255, 255, 255, 0.37);
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 45px;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .imglogo {
+        height: 80px;
+    }
+
+    nav ul li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 10px 25px;
+    }
+
+    nav ul li a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: capitalize;
+        font-size: 100px;
+    }
+
+    nav ul li a:hover {
+        color: rgb(105, 105, 230);
+        transition: .4s;
+        font-size: 200px;
+    }
+
+    button {
+        font-family: "Barlow", sans-serif;
+        border: 0;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 18px;
+        padding: 10px 15px;
+        color: rgb(0, 0, 0);
+        background-color: #ffffff;
+        width: 120px;
+
+        cursor: pointer;
+    }
+
+    button:hover {
+        transition: .4s;
+        background-color: rgb(105, 105, 230);
+        color: white;
+    }
+
+
+
+    .jogos {
+
+        justify-items: center;
+        justify-content: space-between;
+        margin-left: 200px;
+        height: 100%;
+    }
+
+
+
+    .titulogames {
+        
+        margin-left: 500px;
+        margin-top: 60px;
+
+    }
+    .tituloh1{
+        font-size: 90px;
+        margin-left: 630px;
+    }
+
+
+    .card {
+        height: 365px;
+        width: 335px;
+        background-color: rgb(255, 255, 255);
+        margin: 15px;
+        text-align: center;
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+        border: solid 2px black;
+    }
+
+    .card:hover {
+        border: rgb(117, 175, 241) 10px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        transition: .1s;
+    }
+
+
+    /* logos das cards que precisam de ajustes especificos estão aqui */
+    .ff3 {
+        width: 200px;
+        padding-bottom: 50px;
+    }
+
+    .FFI {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .card h5 {
+        font-family: finalf;
+        font-size: 30px;
+ text-decoration: none;
+ text-transform: capitalize;
+        color: black;
+      
+
+    }
+    .p1{ margin-bottom: 30px;
+
+    } .p2{
+        
+    } .p3{ 
+        
+    } .p4{
+        
+    } .p5{ margin-bottom: 70px
+        
+    } .p6{margin-bottom: 70px
+        
+    } .p7{margin-bottom: 50px
+        
+    } .p8{margin-bottom: 40px
+        
+    } .p9{margin-bottom: 90px
+        
+    } .p10{ margin-bottom: 40px
+        
+    } .p11{ margin-bottom: 40px
+        
+    } .p12{
+        
+    } .p13{margin-bottom: 50px
+        
+    } .p14{margin-bottom: 10px
+        
+    } .p15{
+        margin-bottom: 10px
+    }
+</style>
+
+<body>
+    <div class="header">
+        <nav>
+            <h2 class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Final_Fantasy_logo_with_japanese_name.svg/1200px-Final_Fantasy_logo_with_japanese_name.svg.png"
+                    alt="" class="imglogo">
+            </h2>
+        
+        
+            <span>
+                <button onclick="window.location.href='indexx.html'">Inicio</button>
+                
+            </span>
+
+        </nav>
+    </div>
+
+    <div class="titulo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Final_Fantasy_wordmark.svg/2560px-Final_Fantasy_wordmark.svg.png" alt="" width="500px
+      " class="titulogames"> <br>
+      <h1 class="tituloh1">I - XV</h1>
+    </div>
+    <div class="jogos">
+
+        <div id="box">
+            <div class="card">
+                <h5><a href="FF1.html">Final Fantasy I </a></h5>
+                <div class="FFI">
+                    <p class="p1">
+                        Aquele que deu inicio a tudo. Junte-se aos 4 guerreiros da luz e restore a paz ao reino.
+                    </p>
+
+                    <img src="https://static.wikia.nocookie.net/finalfantasy/images/9/94/Logo_Alternativo_FFI.jpg/revision/latest/scale-to-width-down/250?cb=20150307223205&path-prefix=pt-br"
+                        alt="" style="width: 200px;">
+                    <hr>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <h5><a href="FF2.html">Final Fantasy II </a></h5>
+                <div class="FFI">
+                    <p class="p2">
+                        Os tempos de paz estão próximos do fim. O Imperador de Palamecia chamou seres do submundo e
+                        começou sua campanha pela conquista mundial.
+                    </p>
+                    <img src="https://static.wikia.nocookie.net/finalfantasy/images/c/c1/Fflogo-2-new.jpg/revision/latest?cb=20150116010205&path-prefix=pt-br"
+                        alt="" style="width: 300px;">
+
+                </div>
+            </div>
+            <div class="card">
+                <h5><a href="FF3.html">Final Fantasy III </a></h5>
+                <div class="FFI">
+                    <p class="p3">
+                        Quatro jovems se veem escolhidos como guerreiros da luz e partem para recuperar o equilibro
+                        do mundo.
+                    </p>
+                    <img src="https://static.wikia.nocookie.net/finalfantasy/images/9/9a/Ff3-DSlogo.png/revision/latest/scale-to-width-down/1000?cb=20150917235210&path-prefix=pt-br"
+                        alt="" style="width:300px
+                         ;" class="ff3">
+
+                </div>
+            </div>
+
+            <div class="card">
+                <h5><a href="FF4.html">Final Fantasy IV </a></h5>
+                <div class="FFI">
+                    <p class="p4">
+                        Cecil o cavaleiro negro é enganado pelo imperio e taxado como traidor, em busca de reedenção
+                        por seus crimes, se junta ao seus amigos na batalha contra o imperio e o mal que la vive.
+                    </p>
+                    <img src="https://static.wikia.nocookie.net/finalfantasy/images/f/fe/FFIV_logo.png/revision/latest?cb=20160920112033"
+                        alt="" width="200px
+                        ">
+
+                </div>
+            </div>
+            <div class="card">
+                <h5><a href="FF5.html">Final Fantasy V </a></h5>
+                <div class="FFI">
+
+                    <p class="p5">
+                        O mundo consumiu o poder dos cristais á exaustão. Agora sem o equilibro dos mesmos o mundo
+                        encara uma situação terrivel. Bartz e seu grupo partem em uma jornada para restaurar os
+                        cristais a seu poder original.
+                    </p>
+                    <img src="https://static.wikia.nocookie.net/finalfantasy/images/0/0a/FFV_logo.png/revision/latest?cb=20160920112302"
+                        width="200px
+                        " alt="">
+
+                </div>
+            </div>
+            <div class="card">
+                <h5><a href="FF6.html">Final Fantasy VI </a></h5>
+                <div class="FFI">
+                    <p class="p6">
+                        Terra, uma Esper controlada pelo imperio é salva e se junta ao grupo rebelde Returners, que
+                        lutam contra o imperio e seu general Kefka que planeja a destruição completa do mundo
+                    </p>
+                    <img src="https://static.wikia.nocookie.net/finalfantasy/images/3/36/FFVI_logo.png/revision/latest?cb=20160920112443"
+                        alt="" width="200px">
+                    <p style="text-align: center;">
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <h5><a href="FF7.html">Final Fantasy VII </a></h5>
+                <div class="FFI">
+                    <p class="p7">
+                        Em um mundo industrializado, Cloud, um mercenario Ex-Soldier é contratado pelos rebeldes
+                        para derrubar um reator da empresa Shinra, que está gastando todo o Mako do mundo,
+                        essencialmente sua força vital.
+                    </p>
+                    <img src="https://static.wikia.nocookie.net/finalfantasy/images/2/25/FFVII_logo.png/revision/latest?cb=20160920112537"
+                        alt="" width="200px">
+                    <p style="text-align: center;">
+
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <h5><a href="FF8.html">Final Fantasy VIII </a></h5>
+                <div class="FFI">
+                    <p class="p8">
+                        Em um mundo futurista dominado por magia e feiticeiros, Squall e seu grupo partem para
+                        derrotar Ultimecia, a mais forte feiticeira que planeja comprimir o tempo e dominar
+                        presente, passado e futuro.
+                    </p>
+                    <img src="https://static.wikia.nocookie.net/finalfantasy/images/6/61/FFVIII_logo.png/revision/latest?cb=20160920112606"
+                        alt="" width="200px">
+
+                </div>
+            </div>
+            <div class="card">
+                <h5><a href="FF9.html">Final Fantasy IX </a></h5>
+                <div class="FFI">
+                    <p class="p9">
+                        Um grupo de mercenarios sequestram a princesa do reino de Alexandria, mas esse na verdade
+                        faz parte do seu plano para impedir uma iminente guerra.
+                    </p>
+                    <img src="https://static.wikia.nocookie.net/finalfantasy/images/c/cc/FFIX_logo.png/revision/latest?cb=20160920112831"
+                        alt="" width="200px">
+                    <hr>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <h5><a href="FF10.html">Final Fantasy X </a></h5>
+                <div class="FFI">
+                    <p class="p10">
+                        Tidus é derrepente transportado para um mundo destruido e com habitantes que parecem ter
+                        retrocedido no tempo, sem entender o motivo, parte em busca de respostas e no caminho se
+                        junta a varios companheiros.
+                    </p>
+                    <img src="https://static.wikia.nocookie.net/finalfantasy/images/8/82/FFX_logo.png/revision/latest?cb=20160920112920"
+                        alt="" width="200px">
+                    <hr>
+
+                </div>
+            </div>
+            <div class="card">
+                <h5><a href="FF11.html">Final Fantasy XI </a></h5>
+                <div class="FFI">
+                    <p class="p11">
+                        Um aventureiro em meio a uma batalha dos reinos de Vana'diel, San d'Oria, Bastok e Windurst
+                        contra os Beastmen que continuam a aterrorizar a terra mesmo guerra dos cristais.
+                    </p>
+                    <img src="https://static.wikia.nocookie.net/finalfantasy/images/5/55/FFXI_logo.png/revision/latest?cb=20160920112957"
+                        alt="" width="200px">
+                    <hr>
+
+                </div>
+            </div>
+            <div class="card">
+                <h5><a href="FF12.html">Final Fantasy XII </a></h5>
+                <div class="FFI">
+                    <p class="p12">
+                        No mundo de Ivalice, os impérios de Archadia e Rozarria estão travando uma guerra sem fim. A
+                        princesa de um desses reinos cria um movimento de resistencia e la conhece Vaan, e se juntam
+                        para combater a tirania de Archadia.
+                    </p>
+                    <img src="https://static.wikia.nocookie.net/finalfantasy/images/b/b9/FFXII_logo.png/revision/latest?cb=20160920113145"
+                        alt="" width="160px">
+                    <hr>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <h5><a href="FF13.html">Final Fantasy XIII </a></h5>
+                <div class="FFI">
+                    <p class="p13">
+                        Lightning teve sua irmã amaldiçoada pelas divindades que governam Cocoon. Ela luta para
+                        desfazer a maldição, mas no processo acaba por ter o mesmo destino. Agora com companheiros
+                        eles lutam contra os Deuses para recuperar sua liberdade.
+                    </p>
+                    <img src="https://static.wikia.nocookie.net/finalfantasy/images/7/7a/FFXIII_logo.png/revision/latest?cb=20160920113249"
+                        alt="" width="200px">
+                    <hr>
+
+                </div>
+            </div>
+            <div class="card">
+                <h5><a href="FF14.html">Final Fantasy XIV </a></h5>
+                <div class="FFI">
+                    <p class="p14">
+                        Uma historia de mais de 10000 anos, tem seu recomeço quando um aventureiro é abençoado pela
+                        luz de Hydaelyn, lentamente descobrindo os segredos do mundo de Eorzea e tornando se o
+                        verdadeiro Guerreiro da Luz.
+                    </p>
+                    <img src="https://static.wikia.nocookie.net/finalfantasy/images/b/b3/FFXIV_logo.png/revision/latest?cb=20160920113420"
+                        alt="" width="200px">
+                    <hr>
+
+                </div>
+            </div>
+            <div class="card">
+                <h5><a href="FF15.html">Final Fantasy XIV </a></h5>
+                <div class="FFI">
+                    <p class="p15">
+                        Noctis, principe de Insomnia é enviado junto com seus companheiros para encontrar com sua
+                        noiva, Lunafreya. Mas no caminho, seu reinado é atacado e destruido, seu pai morto pelo
+                        emperio de Nilfheim. Agora em busca de vingança e de proteger o que resta de seu reino,
+                        Noctis e seu grupo vão atrás das verdade.
+                    </p>
+                    <img src="https://static.wikia.nocookie.net/finalfantasy/images/2/25/FFXV_logo.png/revision/latest?cb=20160920113641"
+                        alt="" width="200px">
+                    <hr>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

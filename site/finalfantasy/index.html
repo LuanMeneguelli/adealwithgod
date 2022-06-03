@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+
+    }
+
+    .header {
+
+        background-color: rgba(255, 255, 255, 0.37);
+    }
+
+    body {
+        line-height: 1.7;
+
+    }
+
+    .posts-container {
+        background: url('https://c.wallhere.com/photos/96/09/video_games_Final_Fantasy_XVI_crystal_castle_sky_river_boat_video_game_art-1955077.jpg!d')center/cover no-repeat;
+
+
+    }
+
+    .main-wrapper {
+        color: white;
+        display: grid;
+        grid-template-columns: 30% 70%;
+    }
+
+    .post-left {
+        background-color: black;
+        min-height: 100vh;
+        padding: 10px 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .post-right {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .post-title button {
+        display: block;
+        width: 100%;
+        margin: 32px 0;
+        padding: 10px;
+        font-size: 20px;
+
+    }
+
+    .post-image img {
+        width: 100%;
+        display: block;
+    }
+
+    .post-text {
+        background-color: white;
+        color: black;
+        padding: 30px;
+
+    }
+
+    .post-content {
+        width: 70%;
+        margin: 30px 0;
+        box-shadow: 0px 10px 7px -8px black;
+        display: none;
+    }
+
+    .showPost {
+        display: block;
+    }
+
+    .activebtn {
+        background-color: black !important;
+        border: solid 1px white !important;
+    }
+
+    @media (max-width:992px) {
+        .main-wrapper {
+            grid-template-columns: 100%;
+        }
+
+        .post-title button {
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .all {
+        height: 100vh;
+        width: 100%;
+        background-color: rgb(190, 132, 132);
+
+        background-position: center;
+    }
+
+    .header {
+        background-color: rgba(255, 255, 255, 0.37);
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 45px;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .imglogo {
+        height: 80px;
+    }
+
+    nav ul li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 10px 25px;
+    }
+
+    nav ul li a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+
+    nav ul li a:hover {
+        color: rgb(105, 105, 230);
+        transition: .4s;
+    }
+
+    button {
+        font-family: "Barlow", sans-serif;
+        border: 0;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 18px;
+        padding: 10px 15px;
+        color: rgb(53, 44, 129);
+        background-color: #ffffff;
+        width: 120px;
+
+        cursor: pointer;
+    }
+
+    button:hover {
+        transition: .4s;
+        background-color: rgb(105, 105, 230);
+        color: white;
+    }
+</style>
+
+<body>
+
+    <div class="header">
+        <nav>
+            <h2 class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Final_Fantasy_logo_with_japanese_name.svg/1200px-Final_Fantasy_logo_with_japanese_name.svg.png"
+                    alt="" class="imglogo">
+            </h2>
+            <ul>
+                <li id=""><a href="#"> O que é</a></li>
+                <li id=""><a href="#"> Minha historia</a></li>
+                <li id=""><a href="#"> Impacto</a></li>
+                <li id=""><a href="#"> Login</a></li>
+                <li id=""><a href="#"> Cadastro</a></li>
+            </ul>
+            <span>
+                <button>Votação!</button>
+            </span>
+
+        </nav>
+    </div>
+    <section class="posts-container">
+        <div class="main-wrapper">
+            <div class="post-left">
+                <h2>Final Fantasy I</h2>
+                <hr>
+                <p>
+                    uwuuwuwuuwuwuwwuuwwu
+                </p>
+                <div class="post-title">
+                    <button type="button" class="activebtn"> Final Fantasy I</button>
+                    <button type="button" class=""> Final Fantasy II</button>
+                    <button type="button" class=""> Final Fantasy III</button>
+                    <button type="button" class=""> Final Fantasy IV</button>
+                    <button type="button" class=""> Final Fantasy V</button>
+                    <button type="button" class=""> Final Fantasy VI</button>
+                    <button type="button" class=""> Final Fantasy VII</button>
+                    <button type="button" class=""> Final Fantasy VIII</button>
+                    <button type="button" class=""> Final Fantasy IX</button>
+                    <button type="button" class=""> Final Fantasy X</button>
+                    <button type="button" class=""> Final Fantasy XI</button>
+                    <button type="button" class=""> Final Fantasy XII</button>
+                    <button type="button" class=""> Final Fantasy XIII</button>
+                    <button type="button" class=""> Final Fantasy XIV</button>
+                    <button type="button" class=""> Final Fantasy XV</button>
+                </div>
+
+            </div>
+            <div class="post-right">
+                <div class="post-content">
+                    <div class="post-image">
+                        <img src="https://static.wikia.nocookie.net/finalfantasy/images/c/c7/FFI_logo.png/revision/latest?cb=20200407002859&path-prefix=pt-br"
+                            alt="">
+                    </div>
+                    <div class="post-text">
+                        <h3>
+                            qro me matar qro me matar post 1
+                        </h3>
+                        <span>jxoIADGOIADHNOGIIODAOIGHNADOIGH</span>
+                        <p>asdoighasdoiugasdfgaosdpg</p>
+                    </div>
+
+                    <!--end of single post-->
+                </div>
+
+                <div class="post-content showPost">
+                    <div class="post-image">
+                        <img src="https://static.wikia.nocookie.net/finalfantasy/images/c/c7/FFI_logo.png/revision/latest?cb=20200407002859&path-prefix=pt-br"
+                            alt="">
+                    </div>
+                    <div class="post-text">
+                        <h3>
+                            qro me matar qro me matar post 2
+                        </h3>
+                        <span>jxoIADGOIADHNOGIIODAOIGHNADOIGH</span>
+                        <p>asdoighasdoiugasdfgaosdpg</p>
+                    </div>
+
+                    <!--end of single post-->
+                </div>
+                <div class="post-content">
+                    <div class="post-image">
+                        <img src="https://static.wikia.nocookie.net/finalfantasy/images/c/c7/FFI_logo.png/revision/latest?cb=20200407002859&path-prefix=pt-br"
+                            alt="">
+                    </div>
+                    <div class="post-text">
+                        <h3>
+                            qro me matar qro me matar post 3
+                        </h3>
+                        <span>jxoIADGOIADHNOGIIODAOIGHNADOIGH</span>
+                        <p>asdoighasdoiugasdfgaosdpg</p>
+                    </div>
+
+                    <!--end of single post-->
+                </div>
+                <div class="post-content">
+                    <div class="post-image">
+                        <img src="https://static.wikia.nocookie.net/finalfantasy/images/c/c7/FFI_logo.png/revision/latest?cb=20200407002859&path-prefix=pt-br"
+                            alt="">
+                    </div>
+                    <div class="post-text">
+                        <h3>
+                            qro me matar qro me matar post 1
+                        </h3>
+                        <span>jxoIADGOIADHNOGIIODAOIGHNADOIGH</span>
+                        <p>asdoighasdoiugasdfgaosdpg</p>
+                    </div>
+
+                    <!--end of single post-->
+                </div>
+                <div class="post-content">
+                    <div class="post-image">
+                        <img src="https://static.wikia.nocookie.net/finalfantasy/images/c/c7/FFI_logo.png/revision/latest?cb=20200407002859&path-prefix=pt-br"
+                            alt="">
+                    </div>
+                    <div class="post-text">
+                        <h3>
+                            qro me matar qro me matar post 1
+                        </h3>
+                        <span>jxoIADGOIADHNOGIIODAOIGHNADOIGH</span>
+                        <p>asdoighasdoiugasdfgaosdpg</p>
+                    </div>
+
+                    <!--end of single post-->
+                </div>
+                <div class="post-content">
+                    <div class="post-image">
+                        <img src="https://static.wikia.nocookie.net/finalfantasy/images/c/c7/FFI_logo.png/revision/latest?cb=20200407002859&path-prefix=pt-br"
+                            alt="">
+                    </div>
+                    <div class="post-text">
+                        <h3>
+                            qro me matar qro me matar post 1
+                        </h3>
+                        <span>jxoIADGOIADHNOGIIODAOIGHNADOIGH</span>
+                        <p>asdoighasdoiugasdfgaosdpg</p>
+                    </div>
+
+                    <!--end of single post-->
+                </div>
+                <div class="post-content">
+                    <div class="post-image">
+                        <img src="https://static.wikia.nocookie.net/finalfantasy/images/c/c7/FFI_logo.png/revision/latest?cb=20200407002859&path-prefix=pt-br"
+                            alt="">
+                    </div>
+                    <div class="post-text">
+                        <h3>
+                            qro me matar qro me matar post 1
+                        </h3>
+                        <span>jxoIADGOIADHNOGIIODAOIGHNADOIGH</span>
+                        <p>asdoighasdoiugasdfgaosdpg</p>
+                    </div>
+
+                    <!--end of single post-->
+                </div>
+                <div class="post-content">
+                    <div class="post-image">
+                        <img src="https://static.wikia.nocookie.net/finalfantasy/images/c/c7/FFI_logo.png/revision/latest?cb=20200407002859&path-prefix=pt-br"
+                            alt="">
+                    </div>
+                    <div class="post-text">
+                        <h3>
+                            qro me matar qro me matar post 1
+                        </h3>
+                        <span>jxoIADGOIADHNOGIIODAOIGHNADOIGH</span>
+                        <p>asdoighasdoiugasdfgaosdpg</p>
+                    </div>
+
+                    <!--end of single post-->
+                </div>
+                <div class="post-content">
+                    <div class="post-image">
+                        <img src="https://static.wikia.nocookie.net/finalfantasy/images/c/c7/FFI_logo.png/revision/latest?cb=20200407002859&path-prefix=pt-br"
+                            alt="">
+                    </div>
+                    <div class="post-text">
+                        <h3>
+                            qro me matar qro me matar post 1
+                        </h3>
+                        <span>jxoIADGOIADHNOGIIODAOIGHNADOIGH</span>
+                        <p>asdoighasdoiugasdfgaosdpg</p>
+                    </div>
+
+                    <!--end of single post-->
+                </div>
+                <div class="post-content">
+                    <div class="post-image">
+                        <img src="https://static.wikia.nocookie.net/finalfantasy/images/c/c7/FFI_logo.png/revision/latest?cb=20200407002859&path-prefix=pt-br"
+                            alt="">
+                    </div>
+                    <div class="post-text">
+                        <h3>
+                            qro me matar qro me matar post 1
+                        </h3>
+                        <span>jxoIADGOIADHNOGIIODAOIGHNADOIGH</span>
+                        <p>asdoighasdoiugasdfgaosdpg</p>
+                    </div>
+
+                    <!--end of single post-->
+                </div>
+                <div class="post-content">
+                    <div class="post-image">
+                        <img src="https://static.wikia.nocookie.net/finalfantasy/images/c/c7/FFI_logo.png/revision/latest?cb=20200407002859&path-prefix=pt-br"
+                            alt="">
+                    </div>
+                    <div class="post-text">
+                        <h3>
+                            qro me matar qro me matar post 1
+                        </h3>
+                        <span>jxoIADGOIADHNOGIIODAOIGHNADOIGH</span>
+                        <p>asdoighasdoiugasdfgaosdpg</p>
+                    </div>
+
+                    <!--end of single post-->
+                </div>
+                <div class="post-content">
+                    <div class="post-image">
+                        <img src="https://static.wikia.nocookie.net/finalfantasy/images/c/c7/FFI_logo.png/revision/latest?cb=20200407002859&path-prefix=pt-br"
+                            alt="">
+                    </div>
+                    <div class="post-text">
+                        <h3>
+                            qro me matar qro me matar post 1
+                        </h3>
+                        <span>jxoIADGOIADHNOGIIODAOIGHNADOIGH</span>
+                        <p>asdoighasdoiugasdfgaosdpg</p>
+                    </div>
+
+                    <!--end of single post-->
+                </div>
+                <div class="post-content">
+                    <div class="post-image">
+                        <img src="https://static.wikia.nocookie.net/finalfantasy/images/c/c7/FFI_logo.png/revision/latest?cb=20200407002859&path-prefix=pt-br"
+                            alt="">
+                    </div>
+                    <div class="post-text">
+                        <h3>
+                            qro me matar qro me matar post 1
+                        </h3>
+                        <span>jxoIADGOIADHNOGIIODAOIGHNADOIGH</span>
+                        <p>asdoighasdoiugasdfgaosdpg</p>
+                    </div>
+
+                    <!--end of single post-->
+                </div>
+                <div class="post-content">
+                    <div class="post-image">
+                        <img src="https://static.wikia.nocookie.net/finalfantasy/images/c/c7/FFI_logo.png/revision/latest?cb=20200407002859&path-prefix=pt-br"
+                            alt="">
+                    </div>
+                    <div class="post-text">
+                        <h3>
+                            qro me matar qro me matar post 1
+                        </h3>
+                        <span>jxoIADGOIADHNOGIIODAOIGHNADOIGH</span>
+                        <p>asdoighasdoiugasdfgaosdpg</p>
+                    </div>
+
+                    <!--end of single post-->
+                </div>
+                <div class="post-content">
+                    <div class="post-image">
+                        <img src="https://static.wikia.nocookie.net/finalfantasy/images/c/c7/FFI_logo.png/revision/latest?cb=20200407002859&path-prefix=pt-br"
+                            alt="">
+                    </div>
+                    <div class="post-text">
+                        <h3>
+                            qro me matar qro me matar post 1
+                        </h3>
+                        <span>jxoIADGOIADHNOGIIODAOIGHNADOIGH</span>
+                        <p>asdoighasdoiugasdfgaosdpg</p>
+                    </div>
+
+                    <!--end of single post-->
+                </div>
+
+            </div>
+</body>
+<script>
+
+</script>
+
+</html>
