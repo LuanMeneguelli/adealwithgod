@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minigame</title>
+
+
+    <script src="../js/funcoes.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- scripts do Chart.js -->
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    @font-face {
+        font-family: 'finalf';
+        src: url(finalf.ttf);
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-image: url('https://i.imgur.com/F8V7ySm.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+
+    }
+
+
+    a:link {
+        text-decoration: none;
+        color: black;
+    }
+
+    a:visited {
+        text-decoration: none;
+        color: black;
+    }
+
+    .header {
+        background-color: rgba(255, 255, 255, 0.37);
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 45px;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .imglogo {
+        height: 80px;
+    }
+
+    nav ul li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 10px 25px;
+    }
+
+    nav ul li a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: capitalize;
+        font-size: 100px;
+    }
+
+    nav ul li a:hover {
+        color: rgb(105, 105, 230);
+        transition: .4s;
+        font-size: 200px;
+    }
+
+    button {
+        font-family: "Barlow", sans-serif;
+        border: 0;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 18px;
+        padding: 10px 15px;
+        color: rgb(0, 0, 0);
+        background-color: #ffffff;
+        width: 120px;
+
+        cursor: pointer;
+    }
+
+    button:hover {
+        transition: .4s;
+        background-color: rgb(105, 105, 230);
+        color: white;
+    }
+
+
+
+    .jogos {
+
+        justify-items: center;
+        justify-content: space-between;
+        margin-left: 200px;
+        height: 100%;
+    }
+
+
+
+    .titulogames {
+
+        margin-left: 500px;
+        margin-top: 60px;
+
+    }
+
+    .tituloh1 {
+        font-size: 90px;
+        margin-left: 630px;
+    }
+
+
+    .card {
+        height: 365px;
+        width: 335px;
+        background-color: rgb(255, 255, 255);
+        margin: 15px;
+        text-align: center;
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+        border: solid 2px black;
+    }
+
+    .card:hover {
+        border: rgb(117, 175, 241) 10px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        transition: .1s;
+    }
+
+
+
+    .janela {
+        color: white;
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        align-items: center;
+        align-self: center;
+
+    }
+
+    .janela h3 {
+
+        text-align: center;
+
+    }
+
+    .janela h1 {
+        letter-spacing: 4px;
+        font-size: 60px;
+
+    }
+
+
+
+    .perguntascard {
+        height: 665px;
+        width: 735px;
+        background-color: rgba(255, 255, 255, 0.363);
+        margin: 15px;
+        text-align: center;
+        float: left;
+        width: 55%;
+        padding: 0 10px;
+        border: solid 2px black;
+        font-size: 20px;
+        color: black;
+
+
+    }
+
+    .main {
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        align-items: center;
+        align-self: center;
+
+    }
+
+    input {
+        height: 30px;
+        width: 300px;
+        border: 2px solid black;
+        border-radius: 20px;
+        text-align: center;
+
+    }
+
+    ::placeholder {
+        color: black;
+        font-size: 15px
+    }
+
+    .resultado {
+        color: white;
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        align-items: center;
+        align-self: center;
+
+    }
+</style>
+
+<body onload="validarSessao(), atualizarFeed()">
+    <div class="header">
+        <nav>
+            <h2 class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Final_Fantasy_logo_with_japanese_name.svg/1200px-Final_Fantasy_logo_with_japanese_name.svg.png"
+                    alt="" class="imglogo">
+            </h2>
+
+
+            <span>
+                <button onclick="limparSessao()">Sair</button>
+
+    </div>
+
+    </span>
+
+    </nav>
+    </div>
+    <div class="janela">
+        <div class="header-left">
+            <h1>Final Fantasy Quiz</h1>
+
+            <div class="hello">
+                <h3>Olá, Onion Knight - <span id="b_usuario">usuário</span>!</h3>
+                <h3>Responda o quiz abaixo e torne-se um guerreiro da luz!</h3>
+            </div>
+            
+            <!-- 
+            <div class="btn-nav-white">
+                <a href="./cards.html">
+                    <h3>Aquários</h3>
+                </a>
+            </div> -->
+
+            <div class="btn-nav">
+
+                <!-- <h3>Gráficos</h3>
+
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./mural.html">
+                    <h3>Mural de Avisos</h3>
+                </a>
+            </div> -->
+
+
+
+            </div>
+        </div>
+        <!-- <div class="dash">
+            <div class="btns-dash">
+               
+                <button class="btn-chart btn-pink" onclick="obterDadosGrafico(1)">Aquario 1</button>
+                <button class="btn-chart btn-white" onclick="obterDadosGrafico(2)">Aquario 2</button>
+                <button class="btn-chart btn-white" onclick="obterDadosGrafico(3)">Aquario 3</button>
+                <button class="btn-chart btn-white" onclick="obterDadosGrafico(4)">Aquario 4</button>
+            </div>
+            <div>
+                <h3 class="tituloGraficos">
+                    <span id="tituloAquario">123</span>
+                </h3>
+            </div>
+            <div class="graph">
+                <canvas id="canvas_grafico"></canvas>
+            </div>
+        </div> -->
+    </div>
+    <div class="main">
+        <div id="perguntas" class="perguntascard">
+            <div id="pergunta1" style="display: block;">
+                Quantos guerreiros estão presentes em Final Fantasy I?
+                <br><br><br>
+                <input type="text" name="" id="answer1" class="answer1" placeholder="Sua Resposta">
+                <br><br><br>
+                <button onclick="validar()">Responder</button>
+            </div>
+            <div id="pergunta2" style="display: none;">
+                Qual o nome do protagonista de Final Fantasy II?
+                <br><br><br>
+                <input type="text" name="" id="answer2" class="answer2">
+                <br><br><br>
+                <button onclick="validar2()">Responder</button>
+            </div>
+            <div id="pergunta3" style="display: none;">
+                Qual sistema iconico foi introduzido em Final Fantasy III?
+                <br><br><br>
+                <input type="text" name="" id="answer3" class="answer2">
+                <br><br><br>
+                <button onclick="validar3()">Responder</button>
+            </div>
+            <div id="pergunta4" style="display: none;">
+                Qual é o job inicial do protagonista Cecil de Final Fantasy IV?
+                <br><br><br>
+                <input type="text" name="" id="answer4" class="answer2">
+                <br><br><br>
+                <button onclick="validar4()">Responder</button>
+            </div>
+            <div id="pergunta5" style="display: none;">
+                Qual o maior companheiro de Bartz em Final Fantasy V?
+                <br><br><br>
+                <input type="text" name="" id="answer5" class="answer2">
+                <br><br><br>
+                <button onclick="validar5()">Responder</button>
+            </div>
+            <div id="pergunta6" style="display: none;">
+                Qual o nome do vilão de Final Fantasy VI?
+                <br><br><br>
+                <input type="text" name="" id="answer6" class="answer2">
+                <br><br><br>
+                <button onclick="validar6()">Responder</button>
+            </div>
+            <div id="pergunta7" style="display: none;">
+                Qual plataforma foi lançado Final Fantasy VII?
+                <br><br><br>
+                <input type="text" name="" id="answer7" class="answer2">
+                <br><br><br>
+                <button onclick="validar7()">Responder</button>
+            </div>
+            <div id="pergunta8" style="display: none;">
+                Qual tipo de arma é empunhada por Squall em Final Fantasy 8?
+                <br><br><br>
+                <input type="text" name="" id="answer8" class="answer2">
+                <br><br><br>
+                <button onclick="validar8()">Responder</button>
+            </div>
+            <div id="pergunta9" style="display: none;">
+                Qual personagem tem seu visual baseado em um job iconico em Final Fantasy IX?
+                <br><br><br>
+                <input type="text" name="" id="answer9" class="answer2">
+                <br><br><br>
+                <button onclick="validar9()">Responder</button>
+            </div>
+            <div id="pergunta10" style="display: none;">
+                Qual nome do esporte praticado em Final Fantasy X?
+                <br><br><br>
+                <input type="text" name="" id="answer10" class="answer2">
+                <br><br><br>
+                <button onclick="validar10()">Responder</button>
+            </div>
+            <div id="pergunta11" style="display: none;">
+                Qual é o nome completo de Final Fantasy XI?
+                <br><br><br>
+                <input type="text" name="" id="answer11" class="answer2">
+                <br><br><br>
+                <button onclick="validar11()">Responder</button>
+            </div>
+            <div id="pergunta12" style="display: none;">
+                Qual o nome do mundo de Final Fantasy XII?
+                <br><br><br>
+                <input type="text" name="" id="answer12" class="answer2">
+                <br><br><br>
+                <button onclick="validar12()">Responder</button>
+            </div>
+            <div id="pergunta13" style="display: none;">
+                Qual o nome da mitologia do mundo de Final Fantasy XIII?
+                <br><br><br>
+                <input type="text" name="" id="answer13" class="answer2">
+                <br><br><br>
+                <button onclick="validar13()">Responder</button>
+            </div>
+            <div id="pergunta14" style="display: none;">
+                Qual o nome do produtor que salvou Final Fantasy XIV da falencia?
+                <br><br><br>
+                <input type="text" name="" id="answer14" class="answer2">
+                <br><br><br>
+                <button onclick="validar14()">Responder</button>
+            </div>
+            <div id="pergunta15" style="display: none;">
+                Qual o nome do imperio que dominou boa parte do mundo em Final Fantasy XV?
+                <br><br><br>
+                <input type="text" name="" id="answer15" class="answer2">
+                <br><br><br>
+                <button onclick="validar15()" id="fim">Responder</button>
+            </div>
+            <br> <br>
+            <div id="resultado" class="resultado">
+                <span id="resultado1" style="display: none;">
+                    <h3>W</h3>
+                </span>
+                <span id="resultado2" style="display: none;">
+                    <h3>A</h3>
+                </span>
+                <span id="resultado3" style="display: none;">
+                    <h3>R</h3>
+                </span>
+                <span id="resultado4" style="display: none;">
+                    <h3>R</h3>
+                </span>
+                <span id="resultado5" style="display: none;">
+                    <h3>I</h3>
+                </span>
+                <span id="resultado6" style="display: none;">
+                    <h3>O</h3>
+                </span>
+                <span id="resultado7" style="display: none;">
+                    <h3>R</h3>
+                </span>
+                <span id="resultado8" style="display: none;">
+                    <h3> &nbsp;&nbsp;O</h3>
+                </span>
+                <span id="resultado9" style="display: none;">
+                    <h3>F</h3>
+                </span>
+                <span id="resultado10" style="display: none;">
+                    <h3>&nbsp;&nbsp;L</h3>
+                </span>
+                <span id="resultado11" style="display: none;">
+                    <h3>I</h3>
+                </span>
+                <span id="resultado12" style="display: none;">
+                    <h3>G</h3>
+                </span>
+                <span id="resultado13" style="display: none;">
+                    <h3>H</h3>
+                </span>
+                <span id="resultado14" style="display: none;">
+                    <h3>T</h3>
+                </span> <br> <br>
+                <span id="resultado15" style="display: none;"> <br> <br>
+                    <img src="https://i.imgur.com/dJyiN58.png" alt="" width="200px">
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function validar() {
+
+        if (answer1.value == "Quatro") {
+            pergunta1.style.display = 'none'
+            pergunta2.style.display= 'block'
+            resultado1.style.display = 'block'
+
+
+
+        }
+        else {
+            alert('Resposta errada! Cheque a pagina Jogos em caso de duvida')
+
+        }
+    }
+
+    function validar2() {
+
+        if (answer2.value == "Firion") {
+            pergunta2.style.display = 'none'
+            pergunta3.style.display = 'block'
+            resultado2.style.display = 'block'
+
+
+
+        }
+        else {
+            alert('Resposta errada! Cheque a pagina Jogos em caso de duvida')
+
+        }
+    }
+    function validar3() {
+
+if (answer3.value == "Job") {
+    pergunta3.style.display = 'none'
+    pergunta4.style.display = 'block'
+    resultado3.style.display = 'block'
+
+
+
+}
+else {
+    alert('Resposta errada! Cheque a pagina Jogos em caso de duvida')
+
+}
+}
+function validar4() {
+
+if (answer4.value == "Dark Knight") {
+    pergunta4.style.display = 'none'
+    pergunta5.style.display = 'block'
+    resultado4.style.display = 'block'
+
+
+
+}
+else {
+    alert('Resposta errada! Cheque a pagina Jogos em caso de duvida')
+
+}
+}
+function validar5() {
+
+if (answer5.value == "Chocobo") {
+    pergunta5.style.display = 'none'
+    pergunta6.style.display = 'block'
+    resultado5.style.display = 'block'
+
+
+
+}
+else {
+    alert('Resposta errada! Cheque a pagina Jogos em caso de duvida')
+
+}
+}
+function validar6() {
+
+if (answer6.value == "Kefka") {
+    pergunta6.style.display = 'none'
+    pergunta7.style.display = 'block'
+    resultado6.style.display = 'block'
+
+
+
+}
+else {
+    alert('Resposta errada! Cheque a pagina Jogos em caso de duvida')
+
+}
+}
+function validar7() {
+
+if (answer7.value == "Playstation 1") {
+    pergunta7.style.display = 'none'
+    pergunta8.style.display = 'block'
+    resultado7.style.display = 'block'
+
+
+
+}
+else {
+    alert('Resposta errada! Cheque a pagina Jogos em caso de duvida')
+
+}
+}
+function validar8() {
+
+if (answer8.value == "Gunblade") {
+    pergunta8.style.display = 'none'
+    pergunta9.style.display = 'block'
+    resultado8.style.display = 'block'
+
+
+
+}
+else {
+    alert('Resposta errada! Cheque a pagina Jogos em caso de duvida')
+
+}
+}
+function validar9() {
+
+if (answer9.value == "Vivi") {
+    pergunta9.style.display = 'none'
+    pergunta10.style.display = 'block'
+    resultado9.style.display = 'block'
+
+
+
+}
+else {
+    alert('Resposta errada! Cheque a pagina Jogos em caso de duvida')
+
+}
+}
+function validar10() {
+
+if (answer10.value == "Blitzball") {
+    pergunta10.style.display = 'none'
+    pergunta11.style.display = 'block'
+    resultado10.style.display = 'block'
+
+
+
+}
+else {
+    alert('Resposta errada! Cheque a pagina Jogos em caso de duvida')
+
+}
+}
+function validar11() {
+
+if (answer11.value == "Final Fantasy XI Online") {
+    pergunta11.style.display = 'none'
+    pergunta12.style.display = 'block'
+    resultado11.style.display = 'block'
+
+
+
+}
+else {
+    alert('Resposta errada! Cheque a pagina Jogos em caso de duvida')
+
+}
+}
+function validar12() {
+
+if (answer12.value == "Ivalice") {
+    pergunta12.style.display = 'none'
+    pergunta13.style.display = 'block'
+    resultado12.style.display = 'block'
+
+
+
+}
+else {
+    alert('Resposta errada! Cheque a pagina Jogos em caso de duvida')
+
+}
+}
+function validar13() {
+
+if (answer13.value == "Fabula Nova Crystallis") {
+    pergunta13.style.display = 'none'
+    pergunta14.style.display = 'block'
+    resultado13.style.display = 'block'
+
+
+
+}
+else {
+    alert('Resposta errada! Cheque a pagina Jogos em caso de duvida')
+
+}
+}
+function validar14() {
+
+if (answer14.value == "Naoki Yoshida") {
+    pergunta14.style.display = 'none'
+    pergunta15.style.display = 'block'
+    resultado14.style.display = 'block'
+
+
+
+}
+else {
+    alert('Resposta errada! Cheque a pagina Jogos em caso de duvida')
+
+}
+}
+function validar15() {
+
+if (answer15.value == "Nilfheim") {
+    resultado15.style.display = 'block'
+    fim.style.display ='none'
+
+
+
+}
+else {
+    alert('Resposta errada! Cheque a pagina Jogos em caso de duvida')
+
+}
+}
+
+
+
+
+    let proximaAtualizacao;
+
+    window.onload = obterDadosGrafico(1);
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    verificar_autenticacao();
+
+    function alterarTitulo(idAquario) {
+        var tituloAquario = document.getElementById("tituloAquario")
+        tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>Aquário " + idAquario + "</span>"
+    }
+
+    // O gráfico é construído com três funções:
+    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
+    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
+    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+
+    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
+    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
+    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function obterDadosGrafico(idAquario) {
+        alterarTitulo(idAquario)
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idAquario);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(resposta, idAquario) {
+        console.log('iniciando plotagem do gráfico...');
+
+        var dados = {
+            labels: [],
+            datasets: [
+                {
+                    yAxisID: 'y-umidade',
+                    label: 'Umidade',
+                    borderColor: '#32B9CD',
+                    backgroundColor: '#32b9cd8f',
+                    fill: true,
+                    data: []
+                },
+                {
+                    yAxisID: 'y-temperatura',
+                    label: 'Temperatura',
+                    borderColor: '#FFF',
+                    backgroundColor: '#32b9cd8f',
+                    fill: true,
+                    data: []
+                }
+            ]
+        };
+
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.labels.push(registro.momento_grafico);
+            dados.datasets[0].data.push(registro.umidade);
+            dados.datasets[1].data.push(registro.temperatura);
+        }
+
+        console.log(JSON.stringify(dados));
+
+        var ctx = canvas_grafico.getContext('2d');
+        window.grafico_linha = Chart.Line(ctx, {
+            data: dados,
+            options: {
+                responsive: true,
+                animation: { duration: 500 },
+                hoverMode: 'index',
+                stacked: false,
+                title: {
+                    display: false,
+                    text: 'Dados capturados'
+                },
+                scales: {
+                    yAxes: [{
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        id: 'y-temperatura',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 100,
+                            min: 0
+                        }
+                    }, {
+                        type: 'linear',
+                        display: false,
+                        position: 'right',
+                        id: 'y-umidade',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 100,
+                            min: 0
+                        },
+
+                        gridLines: {
+                            drawOnChartArea: false,
+                        },
+                    }],
+                }
+            }
+        });
+
+        setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+    }
+
+
+    // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
+    // buscando a última medida inserida em tabela contendo as capturas, 
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function atualizarGrafico(idAquario, dados) {
+
+        fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico: ${dados}`);
+
+                    // tirando e colocando valores no gráfico
+                    dados.labels.shift(); // apagar o primeiro
+                    dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+
+                    dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                    dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+
+                    dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
+                    dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+
+                    window.grafico_linha.update();
+
+                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+</script>
